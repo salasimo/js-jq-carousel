@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slideshow{
+    display: flex;
+    align-items: center;
+    position: relative; /* aggiunto per lo slider nav in absolute*/
+}
+
+.prev, .next{
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 150%;
+
+
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.images{
+    width: 80vw;
+    max-width: 700px;
+    height: calc(80vw / 16 * 9);
+    max-height: calc(700px / 16 * 9);
+}
+
+.images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.images img.active{
+    display: block;
+}
+
+.slider-nav{
+    font-size: 8px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+.slider-nav i.active{
+    color: white;
+}
